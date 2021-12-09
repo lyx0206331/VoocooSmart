@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_voocoo">
+
+    <fragment
+        android:id="@+id/fragmentSplash"
+        android:name="com.voocoo.smart.fragment.SplashFragment"
+        tools:layout="@layout/fragment_splash">
+        <action
+            android:id="@+id/actionSplashFragmentToMainFragment"
+            app:destination="@id/fragmentMain"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/fragmentMain"
+        android:name="com.voocoo.smart.fragment.MainFragment"
+        tools:layout="@layout/fragment_main">
+        <action
+            android:id="@+id/actionMainFragmentToHomeFragment"
+            app:destination="@id/fragmentHome"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+        <action
+            android:id="@+id/actionMainFragmentToMarketFragment"
+            app:destination="@id/fragmentMarket"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+        <action
+            android:id="@+id/actionMainFragmentToForumFragment"
+            app:destination="@id/fragmentForum"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+        <action
+            android:id="@+id/actionMainFragmentToMineFragment"
+            app:destination="@id/fragmentMine"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/fragmentHome"
+        android:name="com.voocoo.smart.fragment.HomeFragment"
+        tools:layout="@layout/fragment_home">
+    </fragment>
+
+    <fragment
+        android:id="@+id/fragmentMarket"
+        android:name="com.voocoo.smart.fragment.MarketFragment"
+        tools:layout="@layout/fragment_market">
+    </fragment>
+
+    <fragment
+        android:id="@+id/fragmentForum"
+        android:name="com.voocoo.smart.fragment.ForumFragment"
+        tools:layout="@layout/fragment_forum">
+    </fragment>
+
+    <fragment
+        android:id="@+id/fragmentMine"
+        android:name="com.voocoo.smart.fragment.MineFragment"
+        tools:layout="@layout/fragment_mine">
+        <action
+            android:id="@+id/actionMainFragmengToSettingsFragment"
+            app:destination="@id/fragmentSettings"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/fragmentSettings"
+        android:name="com.voocoo.smart.fragment.SettingsFragment"
+        tools:layout="@layout/fragment_settings">
+        <action
+            android:id="@+id/actionSettingsFragmengToLoginFragment"
+            app:destination="@id/fragmentLogin"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/fragmentLogin"
+        android:name="com.voocoo.smart.fragment.LoginFragment"
+        tools:layout="@layout/fragment_login" >
+    </fragment>
+
+</navigation>

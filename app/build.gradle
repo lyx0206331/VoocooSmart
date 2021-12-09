@@ -1,0 +1,95 @@
+plugins {
+    id 'com.android.application'
+    id 'kotlin-android'
+}
+
+android {
+    compileSdk 31
+
+    defaultConfig {
+        applicationId rootProject.ext.android.applicationId
+        minSdk 21
+        targetSdk 31
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildFeatures {
+        dataBinding = true
+    }
+
+    signingConfigs {
+
+        release {
+            storeFile file(releaseKey)
+            storePassword KEY_PWD
+            keyAlias ALIAS_NAME
+            keyPassword ALIAS_PWD
+        }
+    }
+
+    buildTypes {
+        debug {
+            // 显示Log
+            buildConfigField "boolean", "LOG_DEBUG", "true"
+
+            versionNameSuffix "-debug"
+            minifyEnabled false
+            zipAlignEnabled false
+            shrinkResources false
+            signingConfig signingConfigs.release
+        }
+
+        release {
+            // 不显示Log
+            buildConfigField "boolean", "LOG_DEBUG", "false"
+
+            minifyEnabled true
+            zipAlignEnabled true
+            // 移除无用的resource文件
+            shrinkResources true
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.release
+
+            applicationVariants.all { variant ->
+                variant.outputs.all { output ->
+                    def fileName = "Voocoo蔚刻_v${defaultConfig.versionName}_${releaseTime()}_${variant.buildType.name}.apk"
+                    outputFileName = fileName
+                }
+
+            }
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+}
+
+def releaseTime() {
+    return new Date().format("yyyy-MM-dd", TimeZone.getTimeZone("UTC"))
+}
+
+dependencies {
+
+    implementation rootProject.ext.dependencies.androidXCore
+    implementation rootProject.ext.dependencies.androidXAppcompat
+    implementation rootProject.ext.dependencies.androidXMaterial
+    implementation rootProject.ext.dependencies.androidXConstraintLayout
+    implementation rootProject.ext.dependencies.androidXLegacyV4
+    implementation rootProject.ext.dependencies.androidXNavigationFragment
+    implementation rootProject.ext.dependencies.androidXNavigationUI
+    implementation rootProject.ext.dependencies.androidXFragment
+    implementation rootProject.ext.dependencies.androidXLifecycleRuntime
+    implementation rootProject.ext.dependencies.androidXLifecycleViewModelKtx
+    implementation rootProject.ext.dependencies.androidXLifecycleLiveDataKtx
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    testImplementation rootProject.ext.dependencies.androidJUnit
+    androidTestImplementation rootProject.ext.dependencies.androidXExtJUnit
+    androidTestImplementation rootProject.ext.dependencies.androidXTextEspressoCore
+}

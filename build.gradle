@@ -1,0 +1,51 @@
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
+apply from: "config.gradle"
+
+ext {
+    releaseKey = getReleaseKeystore()
+    debugKey = getDebugKeystore()
+}
+
+def getReleaseKeystore() {
+    def os = org.gradle.internal.os.OperatingSystem.current()
+    if (os.isWindows()) {
+        return 'C:\\Android\\voocoo.jks'
+    } else if (os.isLinux()) {
+        return '/home/adrian/Dev/Android/voocoo.jks'
+    } else if (os.isMacOsX()) {
+        return '/Users/dev/Develop/Android/voocoo.jks'
+    } else {
+        return ''
+    }
+}
+
+def getDebugKeystore() {
+    def os = org.gradle.internal.os.OperatingSystem.current()
+    if (os.isWindows()) {
+        return 'C:\\Android\\debug.keystore'
+    } else if (os.isLinux()) {
+        return '/home/adrian/Dev/Android/debug.keystore'
+    } else if (os.isMacOsX()) {
+        return '/Users/dev/.android/debug.keystore'
+    } else {
+        return ''
+    }
+}
+
+buildscript {
+    repositories {
+        google()
+        mavenCentral()
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:7.0.4'
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:1.6.0"
+
+        // NOTE: Do not place your application dependencies here; they belong
+        // in the individual module build.gradle files
+    }
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}
