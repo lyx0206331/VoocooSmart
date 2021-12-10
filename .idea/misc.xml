@@ -3,6 +3,9 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="app/src/main/res/drawable/home_tab_selector.xml" value="0.253125" />
+        <entry key="app/src/main/res/drawable/ic_home_1296db.xml" value="0.253125" />
+        <entry key="app/src/main/res/drawable/tab_icon_color_selector.xml" value="0.253125" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.125" />
         <entry key="app/src/main/res/layout/fragment_forum.xml" value="0.39311594202898553" />
         <entry key="app/src/main/res/layout/fragment_home.xml" value="0.39311594202898553" />

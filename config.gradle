@@ -13,7 +13,7 @@ ext {
             testInstrumentationRunner   : "androidx.test.runner.AndroidJUnitRunner"
     ]
 
-    def JUNIT_VERSION = "4.13"
+    def JUNIT_VERSION = "4.13.2"
     def X_EXT_JUNIT_VERSION = "1.1.2"
     def X_TEST_RUNNER_VERSION = "1.2.0"
     def X_TEST_ESPRESSO_CORE_VERSION = "3.3.0"

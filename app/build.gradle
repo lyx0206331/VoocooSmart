@@ -16,8 +16,12 @@ android {
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
-    buildFeatures {
-        dataBinding = true
+//    buildFeatures {
+//        dataBinding true
+//    }
+
+    dataBinding {
+        enabled = true
     }
 
     signingConfigs {
@@ -88,7 +92,7 @@ dependencies {
     implementation rootProject.ext.dependencies.androidXLifecycleRuntime
     implementation rootProject.ext.dependencies.androidXLifecycleViewModelKtx
     implementation rootProject.ext.dependencies.androidXLifecycleLiveDataKtx
-    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    implementation project(path: ':CommLib')
     testImplementation rootProject.ext.dependencies.androidJUnit
     androidTestImplementation rootProject.ext.dependencies.androidXExtJUnit
     androidTestImplementation rootProject.ext.dependencies.androidXTextEspressoCore
