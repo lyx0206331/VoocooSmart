@@ -66,6 +66,8 @@ ext {
     
     def COROUTINES_VERSION = "1.5.1"
 
+    def MARS_VERSION = "1.2.5"
+
     dependencies = [
             androidJUnit            : 'junit:junit:' + JUNIT_VERSION,
             androidXExtJUnit        : 'androidx.test.ext:junit:' + X_EXT_JUNIT_VERSION,
@@ -134,6 +136,14 @@ ext {
             umsdkCrash              : 'com.umeng.umsdk:crash:' + UMSDK_CRASH_VERSION,
             umsdkAsms               : 'com.umeng.umsdk:asms:' + UMSDK_ASMS_VERSION,
 
-            changelog               : 'de.cketti.library.changelog:ckchangelog:' + CHANGELOG_VERSION
+            changelog               : 'de.cketti.library.changelog:ckchangelog:' + CHANGELOG_VERSION,
+
+            // https://github.com/Tencent/mars
+            // for a sample or demo
+            marsWrapper             : 'com.tencent.mars:mars-wrapper:' + MARS_VERSION,
+            // for app
+            marsCore                : 'com.tencent.mars:mars-core:' + MARS_VERSION,
+            // xlog is included in mars-core and mars-wrapper
+            marsXlog                : 'com.tencent.mars:mars-xlog:' + MARS_VERSION
     ]
 }

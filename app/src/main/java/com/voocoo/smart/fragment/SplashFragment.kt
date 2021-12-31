@@ -37,6 +37,7 @@ class SplashFragment : Fragment() {
             }
             if (binding.pbLoading.progress == binding.pbLoading.max) {
                 findNavController().navigate(R.id.fragmentMain)
+//                findNavController().popBackStack()
             }
         }
         return binding.root
