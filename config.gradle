@@ -50,6 +50,8 @@ ext {
     def X_ROOM_VERSION = "2.2.5"
     def X_LIFECYCLE_VERSION = "2.2.0"
 
+    def X_DYNAMIC_ANIMATION_VERSION = "1.0.0-alpha03"
+
     def ANKO_VERSION = "0.10.8"
 
     def ALIBABA_AROUTER_API_VERSION = "1.5.0"
@@ -119,6 +121,10 @@ ext {
             androidXLifecycleCompiler: 'androidx.lifecycle:lifecycle-compiler:' + X_LIFECYCLE_VERSION,
             androidXLifecycleViewModelKtx: 'androidx.lifecycle:lifecycle-viewmodel-ktx:' + X_LIFECYCLE_VERSION,
             androidXLifecycleLiveDataKtx: 'androidx.lifecycle:lifecycle-livedata-ktx:' + X_LIFECYCLE_VERSION,
+
+            // 基于物理特性的动画
+            androidXDynamicAnimationJava: 'androidx.dynamicanimation:dynamicanimation:' + X_DYNAMIC_ANIMATION_VERSION,
+            androidXDynamicAnimationKtx : 'androidx.dynamicanimation:dynamicanimation-ktx:' + X_DYNAMIC_ANIMATION_VERSION,
 
             ankoAll                 : 'org.jetbrains.anko:anko:' + ANKO_VERSION,
 

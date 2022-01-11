@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Voocoo蔚刻</string>
+    <string name="home">主页</string>
+    <string name="market">商城</string>
+    <string name="forum">论坛</string>
+    <string name="mine">我的</string>
+
+    <string name="enter_home">进入主页</string>
+    <string name="loading">正在加载数据...</string>
+</resources>

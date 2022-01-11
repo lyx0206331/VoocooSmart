@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="DotsIndicator">
+        <attr name="di_dots_selected_color" format="color|reference" />
+        <attr name="di_dots_unselected_color" format="color|reference" />
+        <attr name="di_dots_size" format="dimension|reference" />
+        <attr name="di_dots_width_factor" format="float|reference" />
+        <attr name="di_dots_spacing" format="dimension|reference" />
+        <attr name="di_dots_corner_radius" format="dimension|reference" />
+    </declare-styleable>
+
+    <declare-styleable name="WormDotsIndicator">
+        <attr name="wdi_dots_color" format="color|reference" />
+        <attr name="wdi_dots_size" format="dimension|reference" />
+        <attr name="wdi_dots_spacing" format="dimension|reference" />
+        <attr name="wdi_dots_corner_radius" format="dimension|reference" />
+        <attr name="wdi_dots_stroke_width" format="dimension|reference" />
+        <attr name="wdi_dots_stroke_color" format="color|reference" />
+    </declare-styleable>
+
+    <declare-styleable name="HorScrollViewIndicator">
+        <attr name="hsvi_background_color" format="color|reference"/>
+        <attr name="hsvi_bar_color" format="color|reference"/>
+        <attr name="hsvi_radius" format="dimension|reference"/>
+    </declare-styleable>
+</resources>

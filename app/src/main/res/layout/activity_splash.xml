@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context=".SplashActivity">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".splash.SplashActivity">
 
     <FrameLayout
         android:layout_width="match_parent"
@@ -12,24 +13,49 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center">
 
-            <androidx.appcompat.widget.AppCompatImageView
-                android:id="@+id/ivLogo"
-                android:layout_width="200dp"
-                android:layout_height="200dp"
-                android:layout_centerHorizontal="true"
-                android:src="@mipmap/ic_launcher800x800" />
+            <androidx.viewpager.widget.ViewPager
+                android:id="@+id/viewPager"
+                android:layout_width="300dp"
+                android:layout_height="400dp" />
 
-            <ProgressBar
-                android:id="@+id/pbLoading"
-                style="@style/Widget.AppCompat.ProgressBar.Horizontal"
-                android:layout_width="match_parent"
+            <com.adrian.indicatorlib.DotsIndicator
+                android:id="@+id/dotsIndicator"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/ivLogo"
-                android:layout_marginBottom="60dp"
-                android:layout_marginStart="20dp"
-                android:layout_marginEnd="20dp"
-                android:max="100"/>
+                android:layout_marginTop="10dp"
+                android:layout_centerHorizontal="true"
+                android:layout_below="@id/viewPager"
+                app:di_dots_selected_color="@color/teal_700"
+                app:di_dots_unselected_color="@color/teal_200"
+                app:di_dots_corner_radius="4dp"
+                app:di_dots_size="8dp"
+                app:di_dots_spacing="4dp"
+                app:di_dots_width_factor="2.5" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btnEnterHome"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/dotsIndicator"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/btn_normal_bg_selector"
+                android:paddingStart="20dp"
+                android:paddingEnd="20dp"
+                android:shadowColor="@android:color/darker_gray"
+                android:text="@string/enter_home"
+                android:textColor="@color/white"
+                android:textSize="@dimen/font_normal" />
 
         </RelativeLayout>
+
+        <ProgressBar
+            android:id="@+id/pbLoading"
+            style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:layout_marginBottom="-6dp"
+            android:max="100"/>
     </FrameLayout>
 </layout>
